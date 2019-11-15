@@ -9,7 +9,12 @@ export function fetchMovies() {
             type: FETCH_MOVIES_REQUESTED,
         });
 
-        fetch(requestURL)
+        fetch(requestURL, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
             .then(response => response.json())
             .then(parsedData => {
                 let data = _.values(parsedData[1]);
