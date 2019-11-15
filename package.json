@@ -2,8 +2,9 @@
   "name": "bookmyshow",
   "version": "0.1.0",
   "private": true,
-  "proxy":"https://in.bookmyshow.com",
+  "proxy": "https://in.bookmyshow.com",
   "dependencies": {
+    "http-proxy-middleware": "^0.20.0",
     "lodash": "^4.17.15",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
