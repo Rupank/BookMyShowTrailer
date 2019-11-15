@@ -1,13 +1,84 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  padding: 0;
+  color: white;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.page-container {
+  margin: 2% auto;
+  background-color: #1c1c1c;
+}
+
+.movie-listing {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 5%;
+}
+
+.movie-listing .movie-list-item {
+  width: 18%;
+  height: 40%;
+}
+.poster-container {
+  position: relative;
+}
+.poster-container:hover .play-btn {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.movie-poster {
+  width: 90%;
+  height: 100%;
+}
+.movie-title {
+  padding: 0;
+  margin: 2% 0 10% 0;
+  font-size: small;
+  max-height: 5%;
+  font-size-adjust: initial;
+}
+.play-btn {
+  width: 18%;
+  height: auto;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+.infobox {
+  height: 40%;
+  display: none;
+}
+
+.infobox.show {
+  display: block;
+}
+.infobox.show:after {
+  content: attr(title);
+  display: block;
+  height: 100px;
+  background: #fff;
+  width: calc(100% - 20px);
+  position: absolute;
+  overflow-y: scroll;
+  left: 0;
+  margin-left: 10px;
+}
+
+.filter-div {
+  text-align: right;
+  margin-right: 10%;
+}
+
+ul {
+  list-style: none;
 }
