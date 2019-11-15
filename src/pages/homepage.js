@@ -26,12 +26,15 @@ class HomePage extends Component {
     render() {
         const { filtereMoviesList, error, langList, genreList, appliedFilters } = this.props;
         if (!this.shouldComponentRender()) return (
-            // <LoadingSpinner />
             <div>Loading...</div>
+        )
+        if (error) return (
+            <div>
+                {error}
+            </div>
         )
         return (
             <div>
-                {error && <div>{error}</div>}
                 <Filter langList={langList} genreList={genreList} handleFilter={(e) =>
                     this.applyFilter(e)} />
                 <MovieListing movies={filtereMoviesList} />

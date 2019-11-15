@@ -2,7 +2,8 @@ import { FETCH_MOVIES_REQUESTED, FETCH_MOVIES_SUCCEEDED, FETCH_MOVIES_FAILED, FI
 import * as _ from 'lodash';
 export function fetchMovies() {
     return function (dispatch) {
-        let requestURL = 'https://cors-anywhere.herokuapp.com/https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
+        // let requestURL = 'https://cors-anywhere.herokuapp.com/https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
+        let requestURL = '/serv/getData?cmd=GETTRAILERS&mtype=cs';
 
         dispatch({
             type: FETCH_MOVIES_REQUESTED,
